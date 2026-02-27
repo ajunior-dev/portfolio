@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+main {
+    padding: 40px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.endpoint-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.endpoint-btn {
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.endpoint-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.request-form {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px;
+    gap: 10px;
+}
+
+#methodSelect,
+#urlInput {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+
+#methodSelect {
+    font-weight: 600;
+}
+
+#urlInput {
+    flex: 1;
+}
+
+#urlInput:focus,
+#methodSelect:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.btn-send {
+    padding: 12px;
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+}
+
+.response-section {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.response-container {
+    position: relative;
+    min-height: 300px;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.loading.hidden {
+    display: none;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading p {
+    margin-top: 15px;
+    color: #666;
+    font-weight: 600;
+}
+
+.response-output {
+    background: #1e1e1e;
+    color: #00ff00;
+    padding: 20px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    line-height: 1.5;
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.response-output.success {
+    border-left: 4px solid #27ae60;
+}
+
+.response-output.error {
+    color: #ff6b6b;
+    border-left: 4px solid #e74c3c;
+}
+
+.documentation {
+    background: #e8f4f8;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.documentation h2 {
+    color: #2980b9;
+}
+
+.doc-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.doc-item {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #3498db;
+}
+
+.doc-item h3 {
+    color: #3498db;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+
+.doc-item p {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.doc-item code {
+    display: block;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #d63031;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        border-radius: 0;
+    }
+
+    header {
+        padding: 25px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .request-form {
+        grid-template-columns: 1fr;
+    }
+
+    .response-output {
+        min-height: 200px;
+    }
+
+    .doc-content {
+        grid-template-columns: 1fr;
+    }
+}

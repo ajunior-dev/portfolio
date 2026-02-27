@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO Manager Pro - Gerenciador de Tarefas Profissional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1>📋 TODO Manager Pro</h1>
+                <p>Gerenciador de tarefas com persistence e filtros avançados</p>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        class="task-input" 
+                        placeholder="Adicione uma nova tarefa..."
+                        autofocus
+                    >
+                    <select id="prioritySelect" class="priority-select">
+                        <option value="baixa">Baixa</option>
+                        <option value="media" selected>Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                    <button id="addBtn" class="add-btn">+ Adicionar</button>
+                </div>
+                <div class="input-error" id="inputError"></div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stat">
+                    <span class="stat-value" id="totalTasks">0</span>
+                    <span class="stat-label">Total</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="completedTasks">0</span>
+                    <span class="stat-label">Completas</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="activeTasks">0</span>
+                    <span class="stat-label">Ativas</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="highPriorityTasks">0</span>
+                    <span class="stat-label">Alta Prioridade</span>
+                </div>
+            </section>
+
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <button class="filter-btn active" data-filter="todas">Todas</button>
+                <button class="filter-btn" data-filter="ativas">Ativas</button>
+                <button class="filter-btn" data-filter="completas">Completas</button>
+                <button class="filter-btn" data-filter="alta">🔴 Alta Prioridade</button>
+                <button class="filter-btn" data-filter="media">🟡 Média Prioridade</button>
+                <button class="filter-btn" data-filter="baixa">🟢 Baixa Prioridade</button>
+            </section>
+
+            <!-- Sort Section -->
+            <section class="sort-section">
+                <label for="sortSelect">Ordenar por:</label>
+                <select id="sortSelect" class="sort-select">
+                    <option value="data-desc">Data (Mais recentes)</option>
+                    <option value="data-asc">Data (Mais antigas)</option>
+                    <option value="prioridade">Prioridade</option>
+                    <option value="alfabetica">Alfabética</option>
+                </select>
+            </section>
+
+            <!-- Tasks List -->
+            <section class="tasks-section">
+                <div id="tasksList" class="tasks-list">
+                    <div class="empty-state">
+                        <span class="empty-icon">📝</span>
+                        <p>Nenhuma tarefa ainda. Crie sua primeira tarefa!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="action-section">
+                <button id="clearCompletedBtn" class="action-btn secondary">🗑️ Limpar Concluídas</button>
+                <button id="exportBtn" class="action-btn secondary">📥 Exportar JSON</button>
+                <button id="importBtn" class="action-btn secondary">📤 Importar JSON</button>
+                <input type="file" id="fileInput" class="hidden-file-input" accept=".json">
+                <button id="clearAllBtn" class="action-btn danger">☠️ Limpar Tudo</button>
+            </section>
+        </main>
+
+        <!-- Stats Chart -->
+        <section class="chart-section">
+            <h3>📊 Estatísticas</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+            </div>
+            <p class="progress-text"><span id="progressPercent">0</span>% completo</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

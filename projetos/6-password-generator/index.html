@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senha Forte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Gerador de Senha Forte</h1>
+            <p>Projeto 6 - Senhas seguras com entropia estimada</p>
+        </header>
+
+        <main>
+            <section class="generator">
+                <h2>⚙️ Configurações</h2>
+
+                <div class="config-group">
+                    <label for="length">Tamanho da Senha:</label>
+                    <div class="slider-container">
+                        <input type="range" id="length" min="8" max="32" value="16">
+                        <span id="lengthValue">16</span>
+                    </div>
+                </div>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox" id="uppercase" checked>
+                        <span>📌 Maiúsculas (A-Z)</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="lowercase" checked>
+                        <span>📌 Minúsculas (a-z)</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="numbers" checked>
+                        <span>🔢 Números (0-9)</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="symbols" checked>
+                        <span>⚡ Símbolos (!@#$%)</span>
+                    </label>
+                </div>
+
+                <button class="btn-generate" id="generateBtn">🚀 Gerar Senha</button>
+            </section>
+
+            <section class="result hidden" id="resultSection">
+                <h2>✨ Sua Senha</h2>
+                <div class="password-display">
+                    <input type="text" id="passwordOutput" readonly>
+                    <button class="btn-copy" id="copyBtn">📋 Copiar</button>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <label>Comprimento:</label>
+                        <value id="statLength">0</value>
+                    </div>
+                    <div class="stat">
+                        <label>Tipos usados:</label>
+                        <value id="statCharsets">0</value>
+                    </div>
+                    <div class="stat">
+                        <label>Combinações:</label>
+                        <value id="statCombinations">0</value>
+                    </div>
+                    <div class="stat">
+                        <label>Entropia:</label>
+                        <value id="statEntropy">0 bits</value>
+                    </div>
+                </div>
+
+                <div class="entropy-bar">
+                    <div class="entropy-fill" id="entropyFill"></div>
+                    <span class="entropy-label" id="entropyLabel"></span>
+                </div>
+
+                <div class="time-to-crack">
+                    <h3>⏱️ Tempo para quebrar (força bruta):</h3>
+                    <p id="crackTime"></p>
+                </div>
+            </section>
+
+            <section class="tips">
+                <h2>💡 Dicas de Segurança</h2>
+                <ul>
+                    <li>✅ Use senhas diferentes para cada serviço</li>
+                    <li>✅ Armazene em um gerenciador de senhas (1Password, Bitwarden, LastPass)</li>
+                    <li>✅ Ative autenticação de dois fatores (2FA)</li>
+                    <li>✅ Altere suas senhas regularmente</li>
+                    <li>✅ Nunca compartilhe senhas por email ou mensagem</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

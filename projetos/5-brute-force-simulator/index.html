@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Ataque de Força Bruta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💻 Simulador de Força Bruta</h1>
+            <p>Projeto 5 - Educacional: Demonstrando por que senhas fracas são perigosas</p>
+        </header>
+
+        <main>
+            <section class="setup">
+                <h2>⚙️ Configuração do Ataque</h2>
+                
+                <div class="input-group">
+                    <label for="passwordLength">Tamanho da Senha:</label>
+                    <select id="passwordLength">
+                        <option value="4">4 caracteres</option>
+                        <option value="6">6 caracteres</option>
+                        <option value="8" selected>8 caracteres</option>
+                    </select>
+                </div>
+
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" id="includeNumbers" checked>
+                        Incluir números (0-9)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="includeSymbols">
+                        Incluir símbolos (!@#$%)
+                    </label>
+                </div>
+
+                <button class="btn-start" id="startBtn">🚀 Iniciar Simulação</button>
+            </section>
+
+            <section class="statistics">
+                <h2>📊 Estatísticas</h2>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <label>Tamanho do Espaço:</label>
+                        <value id="charsetSize">0</value>
+                    </div>
+                    <div class="stat">
+                        <label>Combinações Possíveis:</label>
+                        <value id="combinations">0</value>
+                    </div>
+                    <div class="stat">
+                        <label>Tempo Médio (1mil/s):</label>
+                        <value id="averageTime">0</value>
+                    </div>
+                    <div class="stat">
+                        <label>Pior Caso (todas tentativas):</label>
+                        <value id="worstCase">0</value>
+                    </div>
+                </div>
+            </section>
+
+            <section class="simulation hidden" id="simulationSection">
+                <h2>🔄 Simulação em Tempo Real</h2>
+                
+                <div class="progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p class="progress-text" id="progressText">0%</p>
+
+                <div class="results">
+                    <p><strong>Tentativas até agora:</strong> <span id="attempts">0</span></p>
+                    <p><strong>Senha gerada:</strong> <code id="currentPassword">-</code></p>
+                    <p><strong>Tempo decorrido:</strong> <span id="elapsedTime">0s</span></p>
+                </div>
+
+                <div id="successMessage" class="success-message hidden">
+                    <h3>✅ Senha encontrada!</h3>
+                    <p>Levou <span id="finalAttempts">0</span> tentativas</p>
+                    <p>Tempo: <span id="finalTime">0s</span></p>
+                </div>
+            </section>
+
+            <section class="education">
+                <h2>🎓 O que Aprender?</h2>
+                <div class="lessons">
+                    <div class="lesson">
+                        <h3>📌 Senhas fracas</h3>
+                        <p>4-6 caracteres com apenas números podem ser descobertas em segundos!</p>
+                    </div>
+                    <div class="lesson">
+                        <h3>📌 Complexidade importa</h3>
+                        <p>Adicionar símbolos e diferentes casos aumenta exponencialmente a dificuldade.</p>
+                    </div>
+                    <div class="lesson">
+                        <h3>📌 Comprimento é crucial</h3>
+                        <p>Cada caractere a mais dobra aproximadamente o tempo necessário.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

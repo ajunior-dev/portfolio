@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fake em JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 API Fake em JavaScript</h1>
+            <p>Projeto 7 - Simulação de endpoints e consumo com fetch</p>
+        </header>
+
+        <main>
+            <section class="endpoints">
+                <h2>📡 Endpoints Disponíveis</h2>
+                <div class="endpoint-list">
+                    <button class="endpoint-btn" data-endpoint="users">GET /api/users</button>
+                    <button class="endpoint-btn" data-endpoint="user">GET /api/users/:id</button>
+                    <button class="endpoint-btn" data-endpoint="create">POST /api/users</button>
+                    <button class="endpoint-btn" data-endpoint="posts">GET /api/posts</button>
+                    <button class="endpoint-btn" data-endpoint="search">GET /api/search</button>
+                </div>
+            </section>
+
+            <section class="request-section">
+                <h2>🔧 Fazer Requisição</h2>
+                <div class="request-form">
+                    <select id="methodSelect">
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option>
+                    </select>
+                    <input type="text" id="urlInput" placeholder="/api/users">
+                    <button id="sendBtn" class="btn-send">📤 Enviar</button>
+                </div>
+            </section>
+
+            <section class="response-section">
+                <h2>📥 Resposta da API</h2>
+                <div class="response-container">
+                    <div class="loading hidden" id="loading">
+                        <div class="spinner"></div>
+                        <p>Carregando...</p>
+                    </div>
+                    <pre id="responseOutput" class="response-output"></pre>
+                </div>
+            </section>
+
+            <section class="documentation">
+                <h2>📚 Documentação</h2>
+                <div class="doc-content">
+                    <div class="doc-item">
+                        <h3>GET /api/users</h3>
+                        <p>Retorna lista de todos os usuários</p>
+                        <code>Resposta: { users: [...] }</code>
+                    </div>
+                    <div class="doc-item">
+                        <h3>GET /api/users/:id</h3>
+                        <p>Retorna um usuário específico por ID</p>
+                        <code>Resposta: { user: {...} }</code>
+                    </div>
+                    <div class="doc-item">
+                        <h3>POST /api/users</h3>
+                        <p>Cria um novo usuário</p>
+                        <code>Body: { name, email }</code>
+                    </div>
+                    <div class="doc-item">
+                        <h3>GET /api/posts</h3>
+                        <p>Retorna lista de posts</p>
+                        <code>Resposta: { posts: [...] }</code>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
