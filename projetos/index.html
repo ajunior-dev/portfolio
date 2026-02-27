@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Projetos - Junior Silva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .projects-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: left 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .project-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .project-card .tech-type {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .project-techs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .project-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .project-link.secondary {
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+
+        .project-link.secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .documentation-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .documentation-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        .documentation-section ul {
+            list-style: none;
+        }
+
+        .documentation-section li {
+            color: #666;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+
+        .documentation-section li:last-child {
+            border-bottom: none;
+        }
+
+        .documentation-section strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateX(-3px);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .projects-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .documentation-section {
+                padding: 25px;
+            }
+        }
+
+        .icon {
+            display: inline-block;
+            font-size: 1.8rem;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-button">← Voltar ao Portfólio</a>
+
+        <div class="header">
+            <h1>🎯 Portfólio de Projetos</h1>
+            <p>10 Projetos Educacionais de Segurança, Backend e Desenvolvimento Web</p>
+        </div>
+
+        <div class="projects-showcase">
+            <!-- Projeto 1 -->
+            <div class="project-card">
+                <div class="project-number">1</div>
+                <span class="tech-type">Java</span>
+                <h2><span class="icon">🔐</span>Login System</h2>
+                <p>Sistema de autenticação seguro com validação de força bruta, hash SHA-256, bloqueio temporário e registro detalhado de tentativas.</p>
+                <div class="project-techs">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">SHA-256</span>
+                    <span class="tech-tag">Security</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ajunior-dev/1-login-system" target="_blank" class="project-link">Repositório GitHub</a>
+                    <a href="https://github.com/ajunior-dev/1-login-system#readme" target="_blank" class="project-link secondary">Documentação</a>
+                </div>
+            </div>
+
+            <!-- Projeto 2 -->
+            <div class="project-card">
+                <div class="project-number">2</div>
+                <span class="tech-type">Java</span>
+                <h2><span class="icon">🔍</span>Safe Simulator</h2>
+                <p>Analisador de força de senhas com cálculo de entropia, detecção de padrões e recomendações de melhoria em tempo real.</p>
+                <div class="project-techs">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Entropia</span>
+                    <span class="tech-tag">Validação</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ajunior-dev/2-safe-simulator" target="_blank" class="project-link">Repositório GitHub</a>
+                    <a href="https://github.com/ajunior-dev/2-safe-simulator#readme" target="_blank" class="project-link secondary">Documentação</a>
+                </div>
+            </div>
+
+            <!-- Projeto 3 -->
+            <div class="project-card">
+                <div class="project-number">3</div>
+                <span class="tech-type">Java</span>
+                <h2><span class="icon">💾</span>Password Manager</h2>
+                <p>Gerenciador de senhas local com serialização, armazenamento seguro, busca avançada e exportação em CSV.</p>
+                <div class="project-techs">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">I/O</span>
+                    <span class="tech-tag">Serialização</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ajunior-dev/3-password-manager" target="_blank" class="project-link">Repositório GitHub</a>
+                    <a href="https://github.com/ajunior-dev/3-password-manager#readme" target="_blank" class="project-link secondary">Documentação</a>
+                </div>
+            </div>
+
+            <!-- Projeto 4 -->
+            <div class="project-card">
+                <div class="project-number">4</div>
+                <span class="tech-type">Web</span>
+                <h2><span class="icon">📋</span>Form Validator</h2>
+                <p>Validador de formulários robusto com prevenção de XSS, sanitização de entrada e feedback visual em tempo real.</p>
+                <div class="project-techs">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Regex</span>
+                    <span class="tech-tag">Security</span>
+                </div>
+                <div class="project-links">
+                    <a href="4-form-validator/index.html" class="project-link">Abrir Projeto</a>
+                    <a href="https://github.com/ajunior-dev/4-form-validator#readme" target="_blank" class="project-link secondary">Documentação</a>
+                </div>
+            </div>
+
+            <!-- Projeto 5 -->
+            <div class="project-card">
+                <div class="project-number">5</div>
+                <span class="tech-type">Web</span>
+                <h2><span class="icon">🚀</span>Brute Force Sim</h2>
+                <p>Simulador educacional de força bruta com visualização de progresso, algoritmos de conversão e estatísticas em tempo real.</p>
+                <div class="project-techs">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Algoritmos</span>
+                    <span class="tech-tag">Educacional</span>
+                </div>
+                <div class="project-links">
+                    <a href="5-brute-force-simulator/index.html" class="project-link">Abrir Projeto</a>
+                    <a href="https://github.com/ajunior-dev/5-brute-force-simulator#readme" target="_blank" class="project-link secondary">Documentação</a>
+                </div>
+            </div>
+
+            <!-- Projeto 6 -->
+            <div class="project-card">
+                <div class="project-number">6</div>
+                <span class="tech-type">Web</span>
+                <h2><span class="icon">⚡</span>Password Generator</h2>
+                <p>Gerador de senhas com cálculo de entropia, força visual e estimativa de tempo para quebra por força bruta.</p>
+                <div class="project-techs">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Criptografia</span>
+                    <span class="tech-tag">UX</span>
+                </div>
+                <div class="project-links">
+                    <a href="6-password-generator/index.html" class="project-link">Abrir Projeto</a>
+                    <a href="https://github.com/ajunior-dev/6-password-generator#readme" target="_blank" class="project-link secondary">Documentação</a>
+                </div>
+            </div>
+
+            <!-- Projeto 7 -->
+            <div class="project-card">
+                <div class="project-number">7</div>
+                <span class="tech-type">Web</span>
+                <h2><span class="icon">🌐</span>Fake API</h2>
+                <p>API simulada com padrões RESTful, async/await, validação de dados e estruturas de dados in-memory.</p>
+                <div class="project-techs">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Async/Await</span>
+                    <span class="tech-tag">REST</span>
+                </div>
+                <div class="project-links">
+                    <a href="7-fake-api/index.html" class="project-link">Abrir Projeto</a>
+                    <a href="https://github.com/ajunior-dev/7-fake-api#readme" target="_blank" class="project-link secondary">Documentação</a>
+                </div>
+            </div>
+
+            <!-- Projeto 8 -->
+            <div class="project-card">
+                <div class="project-number">8</div>
+                <span class="tech-type">Java</span>
+                <h2><span class="icon">📊</span>Log Analyzer</h2>
+                <p>Analisador de logs com detecção de anomalias, padrões de ataque e geração de relatórios de segurança.</p>
+                <div class="project-techs">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Regex</span>
+                    <span class="tech-tag">Análise</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ajunior-dev/8-log-analyzer" target="_blank" class="project-link">Repositório GitHub</a>
+                    <a href="https://github.com/ajunior-dev/8-log-analyzer#readme" target="_blank" class="project-link secondary">Documentação</a>
+                </div>
+            </div>
+
+            <!-- Projeto 9 -->
+            <div class="project-card">
+                <div class="project-number">9</div>
+                <span class="tech-type">Java</span>
+                <h2><span class="icon">✓</span>Task Manager</h2>
+                <p>Gerenciador de tarefas com controle de acesso baseado em função (RBAC), padrões de design e permissões granulares.</p>
+                <div class="project-techs">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">RBAC</span>
+                    <span class="tech-tag">Design Patterns</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ajunior-dev/9-task-manager" target="_blank" class="project-link">Repositório GitHub</a>
+                    <a href="https://github.com/ajunior-dev/9-task-manager#readme" target="_blank" class="project-link secondary">Documentação</a>
+                </div>
+            </div>
+
+            <!-- Projeto 10 -->
+            <div class="project-card">
+                <div class="project-number">10</div>
+                <span class="tech-type">Web</span>
+                <h2><span class="icon">📋</span>TODO Manager Pro</h2>
+                <p>Gerenciador profissional de tarefas com localStorage persistence, filtros avançados, ordenação dinâmica e import/export JSON.</p>
+                <div class="project-techs">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">localStorage</span>
+                    <span class="tech-tag">State Management</span>
+                </div>
+                <div class="project-links">
+                    <a href="10-todo-app/index.html" class="project-link">Abrir Projeto</a>
+                    <a href="https://github.com/ajunior-dev/10-todo-app#readme" target="_blank" class="project-link secondary">Documentação</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentação -->
+        <div class="documentation-section">
+            <h2>📚 Documentação Completa</h2>
+            <ul>
+                <li><strong>5 Projetos Java:</strong> Projetos 1, 2, 3, 8, 9 com compilação via <code>javac *.java</code></li>
+                <li><strong>5 Projetos Web:</strong> Projetos 4, 5, 6, 7, 10 - abra o index.html no navegador</li>
+                <li><strong>Foco em Segurança:</strong> Todos os projetos demonstram conceitos de segurança e arquitetura</li>
+                <li><strong>Conceitos Cobertos:</strong> SHA-256, XSS Prevention, RBAC, Brute Force, Entropia, localStorage, State Management, Regex, Design Patterns</li>
+                <li><strong>Sem Dependências Externas:</strong> Java stdlib apenas, Browser APIs para web projects</li>
+                <li><a href="README.md" style="color: #667eea; text-decoration: none;"><strong>→ Guia Completo (README.md)</strong></a></li>
+                <li><a href="QUICK-START.md" style="color: #667eea; text-decoration: none;"><strong>→ Quick Start (QUICK-START.md)</strong></a></li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Junior Silva | Desenvolvedor Full-Stack com foco em Segurança</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profissional de Junior Silva - Desenvolvedor Backend e Segurança com foco em Java e Arquitetura de Sistemas.">
+    <title>Junior Silva | Senior Backend & Security Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<header>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1 class="logo">JS</h1>
+            <span class="brand-text">Junior Silva</span>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#stack">Stack</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-background">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+    </div>
+    
+    <div class="hero-content">
+        <div class="hero-badge">🎓 Estudante de AD&S | Foco em Segurança</div>
+        <h1>Construindo aplicações robustas, escaláveis e seguras</h1>
+        <p class="hero-subtitle">
+            Transformo ideias complexas em arquitetura sólida com Java, JavaScript e práticas de segurança de nível enterprise
+        </p>
+        <div class="hero-buttons">
+            <a href="#projetos" class="btn btn-primary">Explorar Meu Trabalho</a>
+            <a href="#contato" class="btn btn-secondary">Entrar em Contato</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Projetos</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">Em curso</span>
+                <span class="stat-label">Formação</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Dedicação</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="sobre" class="section reveal">
+    <div class="section-container">
+        <div class="section-header">
+            <h2>🎯 Quem Sou Eu</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-content">
+                <p>
+                    Estou em formação como desenvolvedor, evoluindo rapidamente rumo a uma atuação full-stack. Tenho <strong>especialização em segurança de aplicações</strong> e <strong>arquitetura de sistemas</strong>, e estudo <strong>Análise e Desenvolvimento de Sistemas</strong> enquanto construo projetos que demonstram domínio em <strong>OOP, Design Patterns e SOLID</strong>.
+                </p>
+                <p>
+                    Mais do que código, trago habilidade em gestão de projetos e comunicação clara com equipes; aprendo rápido e adapto-me a novas tecnologias. Meu foco é criar soluções que não apenas funcionam, mas que são seguras, escaláveis e mantíveis.
+                </p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">💡</span>
+                        <h4>Inovação</h4>
+                        <p>Sempre buscando novas formas de resolver problemas</p>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🔒</span>
+                        <h4>Segurança</h4>
+                        <p>Segurança é prioridade em cada decisão</p>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🗣️</span>
+                        <h4>Comunicação</h4>
+                        <p>Clareza e empatia para trabalhar em equipe</p>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📈</span>
+                        <h4>Gestão</h4>
+                        <p>Organização e liderança de projetos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="about-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Educação</h3>
+                    <p>Análise e Desenvolvimento de Sistemas</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Especialidade</h3>
+                    <p>Segurança & Arquitetura de Software</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🏆</div>
+                    <h3>Objetivo</h3>
+                    <p>Impacto através de código de qualidade</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="expertise" class="section reveal expertise-section">
+    <div class="section-container">
+        <div class="section-header">
+            <h2>⚡ Expertise & Skills</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <div class="expertise-icon">☕</div>
+                <h3>Backend Development</h3>
+                <p>Java, OOP, Design Patterns, SOLID, Spring</p>
+                <div class="skill-bar" data-percent="95"></div>
+            </div>
+            <div class="expertise-card">
+                <div class="expertise-icon">🔐</div>
+                <h3>Security</h3>
+                <p>Criptografia, XSS Prevention, RBAC, Hashing</p>
+                <div class="skill-bar" data-percent="90"></div>
+            </div>
+            <div class="expertise-card">
+                <div class="expertise-icon">🎨</div>
+                <h3>Frontend Development</h3>
+                <p>JavaScript, HTML5, CSS3, Responsive Design</p>
+                <div class="skill-bar" data-percent="85"></div>
+            </div>
+            <div class="expertise-card">
+                <div class="expertise-icon">🏗️</div>
+                <h3>Arquitetura</h3>
+                <p>Microserviços, Padrões, Escalabilidade</p>
+                <div class="skill-bar" data-percent="88"></div>
+            </div>
+            <div class="expertise-card">
+                <div class="expertise-icon">📊</div>
+                <h3>Análise de Dados</h3>
+                <p>Algoritmos, Estruturas, Performance</p>
+                <div class="skill-bar" data-percent="82"></div>
+            </div>
+            <div class="expertise-card">
+                <div class="expertise-icon">🔨</div>
+                <h3>Ferramentas</h3>
+                <p>Git, GitHub, Maven, Docker, Linux</p>
+                <div class="skill-bar" data-percent="87"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projetos" class="section reveal">
+    <div class="section-container">
+        <div class="section-header">
+            <h2>💼 Projetos em Destaque</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="project-badge-new">Destaque</div>
+                <div class="project-header">
+                    <h3>🔐 Sistema de Login Seguro</h3>
+                    <span class="project-badge">Java</span>
+                </div>
+                <p>
+                    Sistema em Java que exemplifica autenticação segura: hashing SHA‑256, proteção contra força bruta com bloqueios temporizados, e um módulo de auditoria detalhado de logs. Arquitetura orientada a objetos seguindo padrões de segurança.
+                </p>
+                <ul class="project-techs">
+                    <li>Java OOP</li>
+                    <li>SHA-256</li>
+                    <li>Security</li>
+                </ul>
+                <a href="projetos/1-login-system/" class="project-link">→ Explorar Projeto</a>
+                <a href="https://github.com/ajunior-dev/1-login-system" target="_blank" class="project-link">📂 Código no GitHub</a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-badge-new">Popular</div>
+                <div class="project-header">
+                    <h3>💻 Validador de Formulário</h3>
+                    <span class="project-badge">Web</span>
+                </div>
+                <p>
+                    Biblioteca JavaScript para validação de formulários na borda, com sanitização de inputs, prevenção de XSS e feedback instantâneo ao usuário, ideal para interfaces responsivas e seguras.
+                </p>
+                <ul class="project-techs">
+                    <li>JavaScript</li>
+                    <li>Regex</li>
+                    <li>Security</li>
+                </ul>
+                <a href="projetos/4-form-validator/" class="project-link">→ Explorar Projeto</a>
+                <a href="https://github.com/ajunior-dev/4-form-validator" target="_blank" class="project-link">📂 Código no GitHub</a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-badge-new">Recente</div>
+                <div class="project-header">
+                    <h3>📋 TODO Manager Pro</h3>
+                    <span class="project-badge">Web</span>
+                </div>
+                <p>
+                    Aplicativo web de gerenciamento de tarefas (SPA) com armazenamento local, filtros dinâmicos, ordenação e funcionalidades de importação/exportação JSON; construido para alta usabilidade e performance.
+                </p>
+                <ul class="project-techs">
+                    <li>JavaScript</li>
+                    <li>localStorage</li>
+                    <li>State Mgmt</li>
+                </ul>
+                <a href="projetos/10-todo-app/index.html" class="project-link">→ Explorar Projeto</a>
+                <a href="https://github.com/ajunior-dev/10-todo-app" target="_blank" class="project-link">📂 Código no GitHub</a>
+            </article>
+        </div>
+
+        <div class="projects-all">
+            <h3>📚 Portfólio Completo</h3>
+            <p>Explore 10 projetos desenvolvidos durante minha formação, abrangendo segurança, backend Java, aplicações web e ferramentas de utilidade, todos com foco em código limpo e aprendizagem contínua.</p>
+            <a href="projetos/index.html" class="btn btn-primary">Ver 10 Projetos</a>
+        </div>
+    </div>
+</section>
+
+<section id="stack" class="section reveal">
+    <div class="section-container">
+        <div class="section-header">
+            <h2>⚙️ Stack Tecnológica</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="stack-container">
+            <div class="stack-column">
+                <h4>Linguagens</h4>
+                <div class="tech-pill-group">
+                    <span class="tech-pill">Java</span>
+                    <span class="tech-pill">JavaScript</span>
+                    <span class="tech-pill">SQL</span>
+                    <span class="tech-pill">HTML5</span>
+                    <span class="tech-pill">CSS3</span>
+                </div>
+            </div>
+            <div class="stack-column">
+                <h4>Conceitos & Padrões</h4>
+                <div class="tech-pill-group">
+                    <span class="tech-pill">OOP</span>
+                    <span class="tech-pill">Design Patterns</span>
+                    <span class="tech-pill">SOLID</span>
+                    <span class="tech-pill">MVC</span>
+                    <span class="tech-pill">REST API</span>
+                </div>
+            </div>
+            <div class="stack-column">
+                <h4>Segurança</h4>
+                <div class="tech-pill-group">
+                    <span class="tech-pill">Criptografia</span>
+                    <span class="tech-pill">XSS Prevention</span>
+                    <span class="tech-pill">RBAC</span>
+                    <span class="tech-pill">Hashing</span>
+                    <span class="tech-pill">Autenticação</span>
+                </div>
+            </div>
+            <div class="stack-column">
+                <h4>Ferramentas</h4>
+                <div class="tech-pill-group">
+                    <span class="tech-pill">Git</span>
+                    <span class="tech-pill">GitHub</span>
+                    <span class="tech-pill">Maven</span>
+                    <span class="tech-pill">Docker</span>
+                    <span class="tech-pill">Linux</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contato" class="section reveal">
+    <div class="section-container">
+        <div class="section-header">
+            <h2>📬 Vamos Trabalhar Juntos?</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-content">
+                <p>
+                    Estou sempre aberto a novas oportunidades, projetos interessantes e conversas sobre desenvolvimento, segurança e arquitetura de sistemas.
+                </p>
+                <p class="contact-subtitle">
+                    Vamos criar algo extraordinário?
+                </p>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:dev.adilsonj@gmail.com" class="contact-link contact-link-email">
+                    <span class="link-icon">✉️</span>
+                    <div>
+                        <span class="link-label">Email</span>
+                        <span class="link-value">dev.adilsonj@gmail.com</span>
+                    </div>
+                </a>
+                <a href="https://github.com/ajunior-dev" target="_blank" class="contact-link contact-link-github">
+                    <span class="link-icon">🐙</span>
+                    <div>
+                        <span class="link-label">GitHub</span>
+                        <span class="link-value">github.com/ajunior-dev</span>
+                    </div>
+                </a>
+                <a href="https://linkedin.com/in/seuperfil" target="_blank" class="contact-link contact-link-linkedin">
+                    <span class="link-icon">💼</span>
+                    <div>
+                        <span class="link-label">LinkedIn</span>
+                        <span class="link-value">linkedin.com/in/seuperfil</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Junior Silva</h4>
+            <p>Developer | Security Specialist | Architect</p>
+        </div>
+        <div class="footer-section">
+            <p>© 2026 • Em constante evolução</p>
+            <p class="footer-credits">Feito com <span class="heart">❤️</span> e ☕</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+</body>
+</html>
